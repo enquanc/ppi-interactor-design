@@ -1,0 +1,21 @@
+# torch is provided by the base Docker image (nvcr.io/nvidia/pytorch:25.03-py3, torch
+# 2.7.0a0+...nv25.3 with CUDA already wired up). Left unpinned on purpose: that build is
+# not a normal PyPI release, so pinning it here would break installs outside that image.
+# If installing from scratch, get a CUDA-matched build from https://pytorch.org first.
+torch
+
+# Fast-moving / deep-internal APIs actually touched by this project (e.g. Esm* model
+# internals, openfold_utils, torch_geometric layers, kagglehub's download path) — pinned
+# to the versions verified working in the enquanc_PPI container.
+torch-geometric==2.6.1
+transformers==5.3.0
+kagglehub==1.0.1
+umap-learn==0.5.12
+
+# Stable, widely-compatible APIs (only basic/common functions are used) — minimum version only.
+pandas>=2.2
+scikit-learn>=1.6
+numpy>=1.26
+matplotlib>=3.10
+networkx>=3.4
+tqdm>=4.67

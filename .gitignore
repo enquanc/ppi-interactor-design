@@ -1,0 +1,15 @@
+# 訓練產出的大型二進位檔案（重跑訓練腳本即可重新產生）
+checkpoints/
+outputs/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# 原始資料集快取 (改用 kagglehub 自動下載，不需進版控)
+archive/
+
+# 環境
+.venv/
+venv/
